@@ -1,0 +1,37 @@
+/* Banner */
+.sb-img-wrapper {
+    height: 350px;
+
+    @include media-breakpoint-up(md) {
+        height: 400px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: 475px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        height: 550px;
+    }
+}
+
+/* Image Left or Right */
+.silr-col {
+    @include media-breakpoint-up(lg) {
+        max-width: 635px;
+        flex: 0 0 635px;
+    }
+}
+.silr-img-380px {
+    max-height: 250px;
+
+    @include media-breakpoint-up(md) {
+        max-height: 320px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-height: 380px;
+    }
+}
+
+/* Section Contact Us */

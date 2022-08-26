@@ -1,0 +1,30 @@
+// Colors
+$theme-colors: (
+  "primary": #E57557,
+);
+
+$primary: #E57557;
+
+//Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1230px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+/* Headings */
+$headings-line-height: 1.5;

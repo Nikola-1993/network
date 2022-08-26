@@ -1,0 +1,20 @@
+// .b-design
+.b-design {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 150px 0 100px;
+    @include background-color;
+
+    &__title {
+        color: $white;
+        font-size: 28px;
+        margin-bottom: 30px;
+        font-weight: 700;
+
+        @include media-breakpoint-up (md) {
+            font-size: 50px;
+        }
+    }
+}

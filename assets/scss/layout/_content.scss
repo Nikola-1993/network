@@ -1,0 +1,47 @@
+// .b-content
+.b-content {
+    padding: 70px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../img/background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+    @include media-breakpoint-up (md) {
+        padding: 100px 0;
+    }
+
+    @include media-breakpoint-up (lg) {
+        padding: 150px 0;
+    }
+
+    &__inner {
+        color: $white;
+        @include media-breakpoint-up (md) {
+            width: 350px;
+        }
+    }
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        @include media-breakpoint-up (md) {
+            font-size: 35px;
+        }
+
+        @include media-breakpoint-up (lg) {
+            font-size: 50px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+    }
+
+    &--style-about {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../img/features16.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

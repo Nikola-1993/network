@@ -1,0 +1,18 @@
+// Importing Bootstrap 4 Sass
+@import "abstracts/theme_variables";
+@import "vendor/bootstrap4/bootstrap";
+
+/* Mixins */
+@import "mixins/all-mixins";
+
+//Importing all Core files
+@import "core/all";
+
+/* Components */
+@import "components/all";
+
+/* layout */
+@import "layout/all";
+
+/* Pages */
+@import "pages/all";

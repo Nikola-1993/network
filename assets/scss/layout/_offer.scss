@@ -1,0 +1,82 @@
+// .b-offer
+
+.b-offer {
+    margin: 70px 0;
+    &__counter {
+        @include media-breakpoint-up (md) {
+            max-width: 300px;
+        }
+
+        @include media-breakpoint-up (lg) {
+            max-width: 430px;
+        }
+
+        @include media-breakpoint-up (xl) {
+            max-width: 275px;
+        }
+
+
+        &-title {
+            font-size: 28px;
+            font-weight: 700;
+
+            @include media-breakpoint-up (md) {
+                font-size: 50px;
+            }
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+        @include media-breakpoint-up (md) {
+            flex-direction: row;
+        }
+    }
+
+    &__thumb {
+        width: 100%;
+        max-width: 75%;
+        position: relative;
+        margin: 15px;
+
+        @include media-breakpoint-up (xl) {
+            max-width: 100%;
+        }
+
+        &:hover .b-offer__pop {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        &-img {
+            display: block;
+            width: 100vw;
+            // height: 100vh;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__pop {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        bottom: 40%;
+        width: 1005;
+        transform: translateY(30px);
+        text-align: center;
+
+        &-text {
+            background-color: $silver;
+            color: $black;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 16px 32px;
+        }
+    }
+}

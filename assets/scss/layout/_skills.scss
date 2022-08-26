@@ -1,0 +1,85 @@
+// .b-skills
+.b-skills {
+    margin: 100px 0;
+    &__wrap {
+        width: 600px;
+        margin:0 auto;
+        padding-bottom: 20px;
+        @include media-breakpoint-up (xl) {
+            padding: 170px 0;
+        }
+
+        &-title {
+            font-size: 28px;
+            font-weight: 600;
+
+            @include media-breakpoint-up (md) {
+                font-size: 35px;
+            }
+
+            @include media-breakpoint-up (lg) {
+                font-size: 40px;
+            }
+
+            @include media-breakpoint-up (xl) {
+                font-size: 50px;
+            }
+        }
+
+        &-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: $secondary;
+        }
+    }
+
+    &__content {
+        margin-top: 20px;
+        
+        &-info {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        
+        &-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            @include media-breakpoint-up (lg) {
+                font-size: 25px;
+            }
+        }
+
+        &-text {
+            margin-bottom: 0;
+            font-size: 18px;
+            font-weight: 400;
+
+        }
+
+    }
+    &__progress {
+        height: 6px;
+        background-color: transparent;
+        
+        &-bar {
+           background-image: linear-gradient(-90deg, #5cc2ed 0, #5d62ee 50%, #c298d3 100%);;
+        }
+    }
+
+
+    &__thumb {
+        width: 100%;
+        height: 100%;
+        &-img {
+            display: block;
+            width: 100vw;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+
+        }
+    }
+}

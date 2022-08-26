@@ -1,0 +1,12 @@
+// Footer
+.site-footer {
+    background-color: $dark-light;
+    padding: 30px 0;
+
+    &__copyright {
+        color: $white;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+}

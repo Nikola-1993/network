@@ -1,0 +1,125 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+//Colors
+$primary: #000000;
+$secondary:#8a8a8a;
+$dark: #001346;
+$silver:#f9f9f9;
+$silver-link: #c7c7c7;
+$dark-light:#1b1b1b;
+$body-color: #3b3fe6;
+
+
+//Grays
+$white: #fff !default;
+$gray-100: #f9f9f9;
+$gray-200: #f5f5f5;
+$gray-300: #e4e4e4;
+$gray-400: #e6e8ec;
+$gray-500: #c1c1c1;
+$gray-600: #b4b4c6;
+$gray-700: #4d4f5c;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$theme-colors: (
+	"primary": $primary,
+	"dark": $dark,
+);
+
+$grays: () !default;
+$grays: map-merge(
+	(
+		"100": $gray-100,
+		"200": $gray-200,
+		"300": $gray-300,
+		"400": $gray-400,
+		"500": $gray-500,
+		"600": $gray-600,
+		"700": $gray-700,
+		"800": $gray-800,
+		"900": $gray-900,
+	),
+	$grays
+);
+
+@mixin bg-variant($parent, $color, $ignore-warning: false) {
+	#{$parent} {
+		background-color: $color !important;
+	}
+}
+
+@each $color, $value in $grays {
+	@include bg-variant(".bg-gray-#{$color}", $value, true);
+}
+
+//Font
+$font-family-sans-serif: "Syne", sans-serif;
+
+//Grid
+@mixin _assert-ascending($map, $map-name) {
+	$prev-key: null;
+	$prev-num: null;
+	@each $key, $num in $map {
+		@if $prev-num == null or unit($num) == "%" or unit($prev-num) == "%" {
+			// Do nothing
+		} @else if not comparable($prev-num, $num) {
+			@warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+		} @else if $prev-num >= $num {
+			@warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+		}
+		$prev-key: $key;
+		$prev-num: $num;
+	}
+}
+
+@mixin _assert-starts-at-zero($map, $map-name: "$grid-breakpoints") {
+	@if length($map) > 0 {
+		$values: map-values($map);
+		$first-value: nth($values, 1);
+		@if $first-value != 0 {
+			@warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
+		}
+	}
+}
+//Grid Breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Navs
+$nav-link-padding-y: 0;
+$nav-link-padding-x: 0;
+
+// Navbar
+$navbar-nav-link-padding-x: 5px;
+$navbar-light-color: rgba($dark, 0.55);
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+$navbar-light-disabled-color: rgba($dark, 0.3);
+
+//Buttons
+$btn-padding-y: 16px;
+$btn-padding-x: 30px;
+$btn-border-width: 2px;
+$btn-border-radius: 35px;
